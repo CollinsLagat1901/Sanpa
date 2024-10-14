@@ -29,54 +29,54 @@
             android:id="@+id/welcome_back_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:text="Welcome Back"
             android:textColor="#FFFFFF"
             android:textSize="28sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/imageView4"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="20dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView4" />
 
         <!-- Email Field -->
         <EditText
             android:id="@+id/email"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="Email"
-            android:drawableLeft="@drawable/email"
-            android:layout_marginEnd="20dp"
             android:layout_marginStart="20dp"
-            android:drawablePadding="10dp"
-            android:textColorHint="@color/white"
-            android:textColor="@color/white"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
             android:backgroundTint="@color/white"
-            android:padding="10dp"
+            android:drawableLeft="@drawable/email"
+            android:drawablePadding="10dp"
+            android:hint="Email"
             android:inputType="textEmailAddress"
-            app:layout_constraintTop_toBottomOf="@id/welcome_back_text"
-            app:layout_constraintStart_toStartOf="parent"
+            android:padding="10dp"
+            android:textColor="#CCA848"
+            android:textColorHint="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="20dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/welcome_back_text" />
 
         <!-- Password Field -->
         <EditText
             android:id="@+id/password"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="Password"
-            android:drawableLeft="@drawable/password"
-            android:layout_marginEnd="20dp"
             android:layout_marginStart="20dp"
-            android:drawablePadding="10dp"
-            android:textColorHint="#FFFFFF"
-            android:textColor="#FFFFFF"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
             android:backgroundTint="#FFFFFF"
-            android:padding="10dp"
+            android:drawableLeft="@drawable/password"
+            android:drawablePadding="10dp"
+            android:hint="Password"
             android:inputType="textPassword"
-            app:layout_constraintTop_toBottomOf="@id/email"
-            app:layout_constraintStart_toStartOf="parent"
+            android:padding="10dp"
+            android:textColor="#CCA848"
+            android:textColorHint="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="20dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/email" />
 
         <!-- Submit Button (Arrow) -->
 
@@ -87,8 +87,9 @@
             android:layout_height="60dp"
             android:layout_marginEnd="24dp"
             android:background="@drawable/btn_login"
+            app:layout_constraintBottom_toTopOf="@+id/facebook_sign_up"
             app:layout_constraintEnd_toEndOf="parent"
-            tools:layout_editor_absoluteY="443dp" />
+            app:layout_constraintTop_toBottomOf="@+id/password" />
 
         <Button
             android:id="@+id/google_sign_up"
@@ -104,7 +105,8 @@
             android:textColor="#FFFFFF"
             app:layout_constraintBottom_toTopOf="@+id/facebook_sign_up"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_button" />
 
         <!-- Sign up with Facebook Button -->
 
@@ -130,14 +132,14 @@
             android:id="@+id/register_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:paddingTop="20dp"
             android:text="Are you a new user? Register"
             android:textColor="#CCA848"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:paddingTop="20dp"
-            android:layout_marginBottom="20dp" />
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

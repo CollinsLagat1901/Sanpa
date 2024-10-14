@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/intro"
+    android:padding="20dp"
     tools:context=".MainActivity">
 
     <!-- Logo Image -->
@@ -17,7 +18,7 @@
         app:layout_constraintBottom_toTopOf="@+id/signup_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/intro" />
+        app:srcCompat="@drawable/logo1" />
 
     <!-- Replace with your logo -->
 
@@ -26,58 +27,49 @@
     <!-- Login Button -->
 
     <!-- Signup Button -->
-    <ImageView
-        android:id="@+id/logo_image"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="145dp"
-        android:src="@drawable/logo1"
-        app:layout_constraintBottom_toTopOf="@+id/signup_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="530dp"
+        android:layout_marginBottom="109dp"
         android:text="Welcome Back"
         android:textColor="@android:color/holo_orange_light"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/signup_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo_image" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/login_button"
-        android:layout_width="151dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="30dp"
-        android:background="@android:color/holo_orange_light"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/btn_background"
         android:text="Login"
+        android:textColor="@android:color/holo_orange_light"
         android:textStyle="bold"
-        android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/signup_button"
-        android:layout_width="139dp"
-        android:layout_height="53dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:layout_below="@id/login_button"
-        android:layout_marginBottom="21dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="150dp"
         android:background="@drawable/btn_background"
         android:text="Get Started"
-        android:textStyle="bold"
         android:textColor="@android:color/holo_orange_light"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo_image" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

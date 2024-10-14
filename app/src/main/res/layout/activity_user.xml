@@ -116,6 +116,7 @@
                             android:padding="8dp">
 
                             <ImageView
+                                android:id="@+id/engineerCard"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:src="@drawable/engineers" />
@@ -144,7 +145,7 @@
                             android:padding="8dp">
 
                             <ImageView
-                                android:id="@+id/engineerCard"
+                                android:id="@+id/driverCard"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:src="@drawable/driver" />
@@ -173,7 +174,7 @@
                             android:padding="8dp">
 
                             <ImageView
-                                android:id="@+id/driverCard"
+                                android:id="@+id/laborerCard"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:src="@drawable/labour" />
@@ -202,7 +203,7 @@
                             android:padding="8dp">
 
                             <ImageView
-                                android:id="@+id/laborerCard"
+                                android:id="@+id/shopCard"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:src="@drawable/carts" />
