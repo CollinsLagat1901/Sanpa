@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <!-- Lighter grey color -->
+            <solid android:color="@color/subTextColor"/> <!-- Light Grey (#D3D3D3) -->
+            <!-- Add padding to reduce the size of the oval -->
+            <padding
+                android:left="16dp"
+                android:top="16dp"
+                android:right="16dp"
+                android:bottom="16dp" />
+        </shape>
+    </item>
+</selector>

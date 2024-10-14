@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "747195258013",
+    "firebase_url": "https://sanpa-construction-default-rtdb.firebaseio.com",
+    "project_id": "sanpa-construction",
+    "storage_bucket": "sanpa-construction.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:747195258013:android:16a05249c00754a9123074",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "747195258013-0hbio41j0ttkck10q0mble96vrqkf0h7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3wAISBx0nikUdT_SZuWv9ORabeMroEys"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "747195258013-0hbio41j0ttkck10q0mble96vrqkf0h7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:747195258013:android:688ec1c173f71c85123074",
+        "android_client_info": {
+          "package_name": "com.example.sanpa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "747195258013-0hbio41j0ttkck10q0mble96vrqkf0h7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3wAISBx0nikUdT_SZuWv9ORabeMroEys"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "747195258013-0hbio41j0ttkck10q0mble96vrqkf0h7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:747195258013:android:5f74ce6d1aafdd03123074",
+        "android_client_info": {
+          "package_name": "com.example.sanpacns"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "747195258013-0hbio41j0ttkck10q0mble96vrqkf0h7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3wAISBx0nikUdT_SZuWv9ORabeMroEys"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "747195258013-0hbio41j0ttkck10q0mble96vrqkf0h7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

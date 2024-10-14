@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#2C2C2C"
+        tools:context=".Login">
+
+        <!-- Background Image -->
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="415dp"
+            android:layout_height="204dp"
+            android:contentDescription="Top background image"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/top_background"
+            tools:layout_editor_absoluteY="-1dp" />
+
+        <!-- Welcome Back Text -->
+        <TextView
+            android:id="@+id/welcome_back_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome Back"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/imageView4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp" />
+
+        <!-- Email Field -->
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:drawableLeft="@drawable/email"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:drawablePadding="10dp"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/white"
+            android:padding="10dp"
+            android:inputType="textEmailAddress"
+            app:layout_constraintTop_toBottomOf="@id/welcome_back_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp" />
+
+        <!-- Password Field -->
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:drawableLeft="@drawable/password"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:drawablePadding="10dp"
+            android:textColorHint="#FFFFFF"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#FFFFFF"
+            android:padding="10dp"
+            android:inputType="textPassword"
+            app:layout_constraintTop_toBottomOf="@id/email"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp" />
+
+        <!-- Submit Button (Arrow) -->
+
+        <!-- Sign up with Google Button -->
+        <ImageButton
+            android:id="@+id/login_button"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/btn_login"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:layout_editor_absoluteY="443dp" />
+
+        <Button
+            android:id="@+id/google_sign_up"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="17dp"
+            android:background="@drawable/btn_background"
+            android:drawableLeft="@drawable/google"
+            android:padding="10dp"
+            android:text="Sign up with Google"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/facebook_sign_up"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- Sign up with Facebook Button -->
+
+        <!-- Register Text -->
+        <Button
+            android:id="@+id/facebook_sign_up"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="51dp"
+            android:background="@drawable/btn_background"
+            android:drawableLeft="@drawable/facebook"
+            android:padding="10dp"
+            android:text="Sign up with Facebook"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/register_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Are you a new user? Register"
+            android:textColor="#CCA848"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingTop="20dp"
+            android:layout_marginBottom="20dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
