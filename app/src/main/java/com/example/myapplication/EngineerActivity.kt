@@ -4,16 +4,21 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.databinding.ActivityEngineerBinding
-
+import com.google.firebase.firestore.FirebaseFirestore
 
 class EngineerActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEngineerBinding
+    private lateinit var db: FirebaseFirestore
+    private lateinit var projectAdapter: ProjectAdapter
+    private val projectList = ArrayList<Project>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +38,15 @@ class EngineerActivity : AppCompatActivity() {
         // Load and set the username
         loadUserInfo()
 
+        // Set up RecyclerView and Firebase
+        setupRecyclerView()
+        fetchProjectsFromFirestore()
+
+        // Laborer Requirement Submission
+        binding.submitLaborers.setOnClickListener {
+            submitLaborerRequirements()
+        }
+
         // Inflate the menu
         setSupportActionBar(binding.toolbar)
     }
@@ -46,33 +60,78 @@ class EngineerActivity : AppCompatActivity() {
         binding.username.text = "Hi, $username"
     }
 
+    private fun setupRecyclerView() {
+        // Setup RecyclerView with adapter
+        binding.projectsRecyclerView.layoutManager = LinearLayoutManager(this)
+        projectAdapter = ProjectAdapter(projectList)
+        binding.projectsRecyclerView.adapter = projectAdapter
+    }
+
+    private fun fetchProjectsFromFirestore() {
+        // Initialize Firestore
+        db = FirebaseFirestore.getInstance()
+
+        // Fetch projects from Firestore and update the RecyclerView
+        db.collection("projects").get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    val project = document.toObject(Project::class.java)
+                    projectList.add(project)
+                }
+                projectAdapter.notifyDataSetChanged()
+            }
+            .addOnFailureListener { exception ->
+                Toast.makeText(this, "Error fetching projects: ${exception.message}", Toast.LENGTH_SHORT).show()
+            }
+    }
+
+    private fun submitLaborerRequirements() {
+        val laborersNeeded = binding.laborersInput.text.toString().toIntOrNull()
+
+        if (laborersNeeded != null && projectAdapter.selectedProjectId != null) {
+            val projectId = projectAdapter.selectedProjectId // Get the selected project ID
+
+            // Update laborer requirement in Firestore for the selected project
+            if (projectId != null) {
+                db.collection("projects").document(projectId)
+                    .update("laborersNeeded", laborersNeeded)
+                    .addOnSuccessListener {
+                        Toast.makeText(this, "Laborer requirements updated", Toast.LENGTH_SHORT).show()
+                    }
+                    .addOnFailureListener { e ->
+                        Toast.makeText(this, "Error updating laborers: ${e.message}", Toast.LENGTH_SHORT).show()
+                    }
+            }
+        } else {
+            Toast.makeText(this, "Please enter a valid number and select a project", Toast.LENGTH_SHORT).show()
+        }
+    }
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.mymenu, menu) // Ensure this matches your menu resource name
+        // Inflate the menu (mymenu.xml)
+        menuInflater.inflate(R.menu.mymenu, menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.nav_notifications -> {
-                // Handle notifications action
+                Toast.makeText(this, "Notifications selected", Toast.LENGTH_SHORT).show()
                 true
             }
             R.id.nav_settings -> {
-                // Handle settings action
+                Toast.makeText(this, "Settings selected", Toast.LENGTH_SHORT).show()
                 true
             }
             R.id.nav_logout -> {
-                // Handle logout action
                 logout()
                 true
             }
             R.id.nav_about -> {
-                // Handle about action
                 showAbout()
                 true
             }
             R.id.nav_help -> {
-                // Handle help action
                 showHelp()
                 true
             }
@@ -91,12 +150,12 @@ class EngineerActivity : AppCompatActivity() {
     }
 
     private fun showAbout() {
-        // Logic to show about information
-        // You can create a dialog or start a new activity
+        Toast.makeText(this, "About selected", Toast.LENGTH_SHORT).show()
+        // Show about dialog or activity
     }
 
     private fun showHelp() {
-        // Logic to show help information
-        // You can create a dialog or start a new activity
+        Toast.makeText(this, "Help selected", Toast.LENGTH_SHORT).show()
+        // Show help dialog or activity
     }
 }

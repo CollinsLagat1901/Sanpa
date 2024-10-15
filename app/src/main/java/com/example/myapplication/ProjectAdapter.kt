@@ -8,6 +8,8 @@ import com.example.myapplication.databinding.ProjectItemBinding
 class ProjectAdapter(private val projectList: ArrayList<Project>) :
     RecyclerView.Adapter<ProjectAdapter.ProjectViewHolder>() {
 
+    var selectedProjectId: String? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProjectViewHolder {
         val binding = ProjectItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ProjectViewHolder(binding)
@@ -16,6 +18,11 @@ class ProjectAdapter(private val projectList: ArrayList<Project>) :
     override fun onBindViewHolder(holder: ProjectViewHolder, position: Int) {
         val project = projectList[position]
         holder.bind(project)
+
+        // Handle item click to select project
+        holder.itemView.setOnClickListener {
+            selectedProjectId = project.projectID // Capture the selected project's ID
+        }
     }
 
     override fun getItemCount(): Int {

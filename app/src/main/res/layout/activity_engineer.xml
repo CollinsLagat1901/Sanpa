@@ -15,7 +15,8 @@
         android:background="@android:color/holo_orange_light"
         android:titleTextColor="@android:color/white"
         app:title="Engineer Dashboard"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        tools:ignore="MissingConstraints" />
 
     <ScrollView
         android:id="@+id/scrollView"
