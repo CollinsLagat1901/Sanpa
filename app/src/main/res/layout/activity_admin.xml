@@ -81,24 +81,26 @@
             </LinearLayout>
 
             <!-- Manage Users Section -->
+            <!-- Manage Roles Section -->
             <TextView
-                android:id="@+id/manageUsersTitle"
+                android:id="@+id/manageRolesTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:text="Manage Users"
+                android:text="Manage Roles"
                 android:textColor="@android:color/holo_orange_light"
                 android:textSize="20sp"
                 android:textStyle="bold"/>
 
-            <!-- RecyclerView for Users -->
+            <!-- RecyclerView for Roles -->
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/userRecyclerView"
+                android:id="@+id/roleRecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
-                tools:listitem="@layout/item_user" />
+                tools:listitem="@layout/role_item" />
+
 
             <!-- Projects Section -->
             <TextView
