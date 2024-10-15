@@ -1,32 +1,33 @@
 package com.example.myapplication
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.databinding.ProjectItemBinding
 
-class ProjectAdapter(private val projectList: ArrayList<Project>) : RecyclerView.Adapter<ProjectAdapter.ProjectViewHolder>() {
+class ProjectAdapter(private val projectList: ArrayList<Project>) :
+    RecyclerView.Adapter<ProjectAdapter.ProjectViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProjectViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.project_item, parent, false)
-        return ProjectViewHolder(view)
+        val binding = ProjectItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ProjectViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ProjectViewHolder, position: Int) {
         val project = projectList[position]
-        holder.projectNameTv.text = project.projectName
-        holder.projectIdTv.text = "ID: ${project.projectId}"
-        holder.projectBudgetTv.text = "Budget: ${project.projectBudget}"
+        holder.bind(project)
     }
 
     override fun getItemCount(): Int {
         return projectList.size
     }
 
-    class ProjectViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val projectNameTv: TextView = itemView.findViewById(R.id.projectNameTv)
-        val projectIdTv: TextView = itemView.findViewById(R.id.projectIdTv)
-        val projectBudgetTv: TextView = itemView.findViewById(R.id.projectBudgetTv)
+    inner class ProjectViewHolder(private val binding: ProjectItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+
+        fun bind(project: Project) {
+            binding.projectName.text = project.projectName
+            binding.projectBudget.text = "Budget: ${project.budget}"
+        }
     }
 }
